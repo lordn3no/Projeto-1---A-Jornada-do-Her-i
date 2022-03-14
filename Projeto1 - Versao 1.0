@@ -1,0 +1,69 @@
+console.clear()
+const prompt = require(`prompt-sync`)();
+//-------------------------------- 1 ----------------------------//
+console.log("A lua ilumina você pela janela. Já é tarde, e você coça seus olhos, sonolento.\r\nSeu corpo pede por descanso, mas seu código ainda não estáa funcional.\r\nPela última vez, você confere suas linhas de programação e torce para que não hajam mais erro...")
+console.log()
+
+//------------------------------ 2 ----------------------------//
+
+let contagem = 0
+let questoes = ["Você tomou todos as 5 xícaras de café? ", "Você já revisou todas as linhas do seu programa? ", "Você já rodou seu programa no terminal 3 vezes? ", "Você já inseriu o programa no GitHub? ", "Você se distraiu fazendo as 4 tarefas anteriores? "]
+let respostas = []
+let a = 0
+let b = 0
+let c = 0
+let d = 0
+let e = 0
+
+//------------------------------ 3 ------------------------------//
+
+while (contagem < 5){
+  const index = (prompt(questoes[contagem])).toLowerCase()
+  if (index !== "nao" && index !== "sim"){
+    console.log("Sua resposta é inválida. Tente novamente")
+    continue
+  }
+  else {
+    respostas[contagem] = index
+    contagem++
+  }
+}
+
+let [r1, r2, r3, r4, r5] = respostas
+
+if (r1 == "nao"){
+ a++;
+} 
+if (r2 == "nao"){
+  b++;
+} 
+if (r3 == "nao"){
+  c++;
+} 
+if (r4 == "nao"){
+  d++;
+}
+if (r5 == "nao"){
+  e++;
+}
+
+//------------------------------ 4 -----------------------------//
+
+let final = a + b + c + d + e
+if (final == 5){
+  console.log()
+  console.log("Seus péssimos hábitos te tornam um péssimo programador. Revise seus comportamentos e melhore!")
+} else if (final == 3 || final == 4){
+  console.log()
+  console.log("Talvez você não seja o pior dos piores, mas com certeza não está nem perto dos melhores. Tente melhorar!")
+} else if (final == 2){
+  console.log()
+  console.log("Você está na média. Preste atenção nos comportamentos que farão de você um dos melhores!")
+} else if (final == 1){
+  console.log()
+  console.log("Seu código funciona... 99% das vezes. Um pouco mais de atenção não teria sido ruim.")
+} else if (final == 0){
+  console.log()
+  console.log("As vezes eu me esqueço que você é o melhor! Além de ser cuidadoso, você fez algo a mais, e conseguiu seu merecido descanso!")
+}
+
